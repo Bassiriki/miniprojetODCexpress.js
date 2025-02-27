@@ -9,7 +9,7 @@ const router = express.Router();
 router.post('/produits', validateProduct, produitController.ajouterProduit);
 
 // Obtenir tous les produits (GET)
-router.get('/produits', produitController.obtenirProduits);
+router.get('/produit', produitController.obtenirProduits);
 
 // Obtenir un produit par ID (GET)
 router.get('/produits/:id', validateProductId, produitController.obtenirProduitParId);

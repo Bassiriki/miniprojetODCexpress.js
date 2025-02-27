@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 // Définition du schéma du produit
-const productSchema = new mongoose.Schema({
+const produitSchema = new mongoose.Schema({
   nom: {
     type: String,
     required: [true, 'Le nom du produit est obligatoire'],
@@ -25,9 +25,9 @@ const productSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
-}, { collection: 'script' });
+}, { collection:'script'});
 
 // Création du modèle Product basé sur le schéma
-const Product = mongoose.model('Product', productSchema);
+const Produit = mongoose.model('Product', produitSchema);
 
-module.exports = Product;
+module.exports = Produit;

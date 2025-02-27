@@ -1,6 +1,7 @@
-const productService = require('../services/produitService');
+ // controllers/produitController.js
+const produitService = require('../services/produitService');
 
-// 📌 Ajouter un produit
+// Ajouter un produit
 const ajouterProduit = async (req, res) => {
   try {
     const produit = await produitService.ajouterProduit(req.body);
@@ -10,7 +11,7 @@ const ajouterProduit = async (req, res) => {
   }
 };
 
-// 📌 Obtenir tous les produits
+// Obtenir tous les produits
 const obtenirProduits = async (req, res) => {
   try {
     const produits = await produitService.obtenirProduits();
@@ -20,7 +21,7 @@ const obtenirProduits = async (req, res) => {
   }
 };
 
-// 📌 Obtenir un produit par ID
+// Obtenir un produit par ID
 const obtenirProduitParId = async (req, res) => {
   try {
     const produit = await produitService.obtenirProduitParId(req.params.id);
@@ -33,10 +34,10 @@ const obtenirProduitParId = async (req, res) => {
   }
 };
 
-// 📌 Mettre à jour un produit
+// Mettre à jour un produit
 const mettreAJourProduit = async (req, res) => {
   try {
-    const produit = await productService.mettreAJourProduit(req.params.id, req.body);
+    const produit = await produitService.mettreAJourProduit(req.params.id, req.body);
     if (!produit) {
       return res.status(404).json({ message: 'Produit non trouvé' });
     }
@@ -46,7 +47,7 @@ const mettreAJourProduit = async (req, res) => {
   }
 };
 
-// 📌 Supprimer un produit
+// Supprimer un produit
 const supprimerProduit = async (req, res) => {
   try {
     const produit = await produitService.supprimerProduit(req.params.id);

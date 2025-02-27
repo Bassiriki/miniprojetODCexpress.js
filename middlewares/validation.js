@@ -2,15 +2,15 @@ const { body, validationResult, param } = require('express-validator');
 
 // Middleware de validation pour un produit
 const validateProduct = [
-  body('name')
+  body('nom')
     .notEmpty().withMessage('Le nom est obligatoire')
     .isLength({ min: 3 }).withMessage('Le nom doit contenir au moins 3 caractères'),
   
-  body('price')
+  body('prix')
     .notEmpty().withMessage('Le prix est obligatoire')
     .isFloat({ min: 0 }).withMessage('Le prix doit être un nombre positif'),
 
-  body('stock')
+  body('quantite')
     .optional()
     .isInt({ min: 0 }).withMessage('Le stock doit être un entier positif'),
 
